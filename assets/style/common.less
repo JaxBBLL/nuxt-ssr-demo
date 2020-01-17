@@ -1,0 +1,30 @@
+@import './common/var.less';
+@import './common/mixin.less';
+
+.mix-normalize-plus();
+.mix-make-grid();
+.mix-border-box();
+.mix-common();
+
+body {
+  font-size: 14px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: 0.3s;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+.link {
+  color: @primary-color;
+}

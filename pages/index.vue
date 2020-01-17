@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    Home
+    <h1>这是首页</h1>
   </div>
 </template>
 

@@ -23,7 +23,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~assets/style/common.css'],
+  css: ['~assets/style/common.less'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -54,6 +54,19 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    extractCSS: process.env.NODE_ENV === 'production',
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue|less)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    },
     extend(config, ctx) {}
   },
   server: {

@@ -1,27 +1,24 @@
 <template>
   <div class="container">
-    <p>{{ $route.params.id }}</p>
-    <nuxt-link to="/user">
-      user
-    </nuxt-link>
     <div>
-      {{ info.name }}
-      {{ info.age }}
+      <h1>用户详情</h1>
+      <p>{{ userInfo.name }}</p>
+      <p>{{ userInfo.age }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  validate ({ params }) {
+  validate({ params }) {
     return /^\d+$/.test(params.id)
   },
-  data () {
+  data() {
     return {}
   },
-  async asyncData ({ $axios }) {
+  async asyncData({ $axios }) {
     const data = await $axios.$get('https://api.myjson.com/bins/66s9a')
-    return { info: data }
+    return { userInfo: data }
   }
 }
 </script>
