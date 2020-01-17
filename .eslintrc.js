@@ -14,6 +14,8 @@ module.exports = {
   // add your custom rules here
   rules: {
     "space-before-function-paren": 0,
-    "vue/singleline-html-element-content-newline": 0
+    "vue/singleline-html-element-content-newline": 0,
+    "vue/html-self-closing": 0,
+    "no-console": 0
   }
 }

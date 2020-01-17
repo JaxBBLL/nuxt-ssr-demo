@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "fix": "eslint --fix pages/**/*.vue"
+    "fix": "eslint --fix pages/**/*.vue",
+    "prod": "pm2 start --name nuxtDemo ./node_modules/nuxt/bin/nuxt.js -- start"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
