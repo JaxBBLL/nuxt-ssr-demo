@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div class="mb20">
+      用户详情接口：<a href="https://api.myjson.com/bins/mj06m" class="link" target="_blank">https://api.myjson.com/bins/mj06m</a>
+    </div>
     <div class="flex">
       <img :src="userInfo.avatar" class="mr20" />
       <div class="flex-item">

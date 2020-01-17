@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <nuxt-link :to="{ name: 'user-id-name', params: { id: 9527, name: 'JaxBBLL'} }" class="link">动态路由</nuxt-link>
+    <div>
+      用户列表接口：<a href="https://api.myjson.com/bins/87q12" class="link" target="_blank">https://api.myjson.com/bins/87q12</a>
+    </div>
     <table class="table mt10">
       <thead>
         <tr>
