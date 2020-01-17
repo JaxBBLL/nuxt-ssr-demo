@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <table class="table">
+    <nuxt-link :to="{ name: 'user-id-name', params: { id: 9527, name: 'JaxBBLL'} }" class="link">动态路由</nuxt-link>
+    <table class="table mt10">
       <thead>
         <tr>
           <th>ID</th>
