@@ -16,6 +16,10 @@ module.exports = {
     "space-before-function-paren": 0,
     "vue/singleline-html-element-content-newline": 0,
     "vue/html-self-closing": 0,
-    "no-console": 0
+    "no-console": 0,
+    "vue/multiline-html-element-content-newline": 0,
+    "arrow-parens": 0,
+    "vue/html-closing-bracket-newline": 0,
+    "vue/html-indent": 0
   }
 }

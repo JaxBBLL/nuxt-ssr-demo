@@ -8,6 +8,9 @@
     </li>
   </ul>
 </template>
+<script>
+export default {}
+</script>
 <style scoped lang="less">
 @import '~assets/style/common/var.less';
 @import '~assets/style/common/mixin.less';

@@ -1,3 +1,4 @@
+console.log('MY_ENV', process.env.BASE_URL)
 export default {
   mode: 'universal',
   /*
@@ -27,7 +28,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/axios'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -40,13 +41,37 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:9527'
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    proxy: true,
+    credentials: true
+    // retry: { retries: 3 },
+    // 开发模式下开启debug
+    // debug: process.env._ENV !== 'production',
+    // 设置不同环境的请求地址
+    // baseURL:
+    //   process.env._ENV === 'production'
+    //     ? 'http://admin.test.kucdn.cn'
+    //     : 'http://localhost:9527'
+  },
+  proxy: {
+    '/api': {
+      target: 'http://admin.test.kucdn.cn',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/api': '/api'
+      }
+    }
+  },
   /*
    ** Build configuration
    */
