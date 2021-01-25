@@ -14,11 +14,8 @@
         <td class="border">{{ item.name }}</td>
         <td class="border">{{ item.age }}</td>
         <td class="border">
-          <nuxt-link
-            :to="{ name: 'user-id', params: { id: item.id } }"
-            class="text-primary"
-          >
-            进入详情
+          <nuxt-link :to="{ name: 'user-id', params: { id: item.id } }">
+            <el-button type="primary">进入详情</el-button>
           </nuxt-link>
         </td>
       </tr>

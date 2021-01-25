@@ -1,4 +1,4 @@
-console.log('MY_ENV', process.env.BASE_URL)
+console.log('MY_ENV', process.env.MY_ENV)
 export default {
   mode: 'universal',
   /*
@@ -28,7 +28,13 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/axios'],
+  plugins: [
+    '~/plugins/axios',
+    {
+      src: '~/plugins/element-ui',
+      ssr: true,
+    },
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -81,18 +87,7 @@ export default {
      ** You can extend webpack config here
      */
     extractCSS: process.env.NODE_ENV === 'production',
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          styles: {
-            name: 'styles',
-            test: /\.(css|vue|less)$/,
-            chunks: 'all',
-            enforce: true,
-          },
-        },
-      },
-    },
+    vendor: ['element-ui'],
     extend(config, ctx) {},
   },
   server: {

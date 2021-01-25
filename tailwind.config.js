@@ -12,7 +12,12 @@ module.exports = {
       'pages/**/*.vue',
       'plugins/**/*.js',
       'nuxt.config.js'
-    ]
+    ],
+    options: {
+      // 解决build tailwindcss purage 移出element-ui样式
+      whitelistPatterns: [/el-.+$/],
+      whitelistPatternsChildren: [/el-.+$/]
+    }
   },
   target: 'ie11', // relaxed
   prefix: '',
