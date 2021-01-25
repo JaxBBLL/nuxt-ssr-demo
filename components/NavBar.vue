@@ -1,5 +1,5 @@
 <template>
-  <ul class="container">
+  <ul>
     <li>
       <nuxt-link to="/" exact-active-class="active">首页</nuxt-link>
     </li>
@@ -30,6 +30,7 @@ ul {
       font-size: 16px;
       &.active {
         color: @primary-color;
+        font-weight: bold;
         border-bottom: 2px solid @primary-color;
       }
     }

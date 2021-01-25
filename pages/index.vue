@@ -1,20 +1,6 @@
 <template>
-  <div class="container">
+  <div>
     <h1>这是首页</h1>
-    <table class="table mt10">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>用户</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in list" :key="item.id">
-          <td>{{ item.id }}</td>
-          <td>{{ item.userName }}</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </template>
 
@@ -22,18 +8,6 @@
 export default {
   data() {
     return {}
-  },
-  async asyncData({ $axios }) {
-    const send = {
-      pageNo: 1,
-      pageSize: 15
-    }
-    try {
-      const { data } = await $axios.post('/api/v1/admin/agent/success', send)
-      return { list: data.data.result }
-    } catch (e) {
-      return { list: [] }
-    }
   },
   mounted() {},
   methods: {}

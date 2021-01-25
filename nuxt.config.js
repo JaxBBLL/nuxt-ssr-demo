@@ -12,15 +12,15 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#ff6900' },
+  loading: { color: '#9c27b0' },
   /*
    ** Global CSS
    */
@@ -34,7 +34,8 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/tailwindcss',
   ],
   /*
    ** Nuxt.js modules
@@ -42,10 +43,10 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/proxy'
+    '@nuxtjs/proxy',
   ],
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:9527'
+    baseUrl: process.env.BASE_URL || 'http://localhost:9527',
   },
   /*
    ** Axios module configuration
@@ -53,7 +54,7 @@ export default {
    */
   axios: {
     proxy: true,
-    credentials: true
+    credentials: true,
     // retry: { retries: 3 },
     // 开发模式下开启debug
     // debug: process.env._ENV !== 'production',
@@ -68,9 +69,9 @@ export default {
       target: 'http://admin.test.kucdn.cn',
       changeOrigin: true,
       pathRewrite: {
-        '^/api': '/api'
-      }
-    }
+        '^/api': '/api',
+      },
+    },
   },
   /*
    ** Build configuration
@@ -87,15 +88,15 @@ export default {
             name: 'styles',
             test: /\.(css|vue|less)$/,
             chunks: 'all',
-            enforce: true
-          }
-        }
-      }
+            enforce: true,
+          },
+        },
+      },
     },
-    extend(config, ctx) {}
+    extend(config, ctx) {},
   },
   server: {
     port: 9527, // default: 3000
-    host: '0.0.0.0' // default: localhost,
-  }
+    host: '0.0.0.0', // default: localhost,
+  },
 }

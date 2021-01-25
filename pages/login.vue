@@ -15,8 +15,8 @@ export default {
         rememberMe: false
       }
       this.$axios.post('/api/v1/admin/login', send).then(res => {
-        // this.$router.push('/')
-        location.href = '/'
+        this.$router.push('/')
+        // location.href = '/'
       })
     }
   }
