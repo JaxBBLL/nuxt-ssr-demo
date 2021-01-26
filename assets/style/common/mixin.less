@@ -1,0 +1,26 @@
+@import "./var.less";
+
+.border-box() {
+  html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+}
+.line-overflow(@line: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @line;
+}
+
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
